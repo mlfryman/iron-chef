@@ -29,25 +29,24 @@ describe('Recipe', function(){
       expect(r1.name).to.equal('Roasted Carrots with Cardamom Butter');
       expect(r1.ingredients).to.have.length(4);
       expect(r1.directions).to.have.length(4);
-      expect(r1.recipeId).to.be.instanceof(Mongo.ObjectID);
+
     });
-  });
-  describe('.create', function(){
-    it('should create an recipe', function(done){
-      var o = {name:'Roasted Carrots with Cardamom Butter', photo:'url', ingredients:['a', 'b', 'c', 'd'], directions:['e','f','g','h'] };
-      recipe.create(o, function(err, recipe){
-        expect(recipe._id).to.be.instanceof(Mongo.ObjectID);
-        done();
+    describe('.create', function(){
+      it('should create an recipe', function(done){
+        var o = {name:'Roasted Carrots with Cardamom Butter', photo:'url', ingredients:['a', 'b', 'c', 'd'], directions:['e','f','g','h'] };
+        Recipe.create(o, function(err, recipe){
+          expect(recipe._id).to.be.instanceof(Mongo.ObjectID);
+          done();
+        });
+      });
+    });
+    describe('.all', function(){
+      it('should get all recipes from database', function(done){
+        Recipe.all(function(err, recipes){
+          expect(recipes).to.have.length(3);
+          done();
+        });
       });
     });
   });
-  describe('.all', function(){
-    it('should get all recipes from database', function(done){
-      Recipe.all(function(err, recipes){
-        expect(recipes).to.have.length(3);
-        done();
-      });
-    });
-  });
-  // Last Bracket
 });

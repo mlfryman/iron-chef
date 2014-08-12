@@ -1,12 +1,12 @@
 'use strict';
 
-var Mongo = require('mongodb');
+//var Mongo = require('mongodb');
 
-function Recipe(r){
-  this.name = r.name;
-  this.photo = r.photo;
-  this.ingredients = [];
-  this.directions = [];
+function Recipe(o){
+  this.name = o.name;
+  this.photo = o.photo;
+  this.ingredients = o.ingredients;
+  this.directions = o.directions;
 
 }
 
