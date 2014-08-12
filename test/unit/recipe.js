@@ -23,7 +23,7 @@ describe('Recipe', function(){
   });
   describe('constructor', function(){
     it('should create a new Recipe object', function(){
-      var o = {name:'Roasted Carrots with Cardamom Butter', photo:'url', ingredients:['a', 'b', 'c', 'd'], directions:['e','f','g','h'] };
+      var o = {name:'Roasted Carrots with Cardamom Butter', photo:'url', ingredients:'a,b,c,d', directions:'e,f,g,h' };
       var r1 = new Recipe(o);
       expect(r1).to.be.instanceof(Recipe);
       expect(r1.name).to.equal('Roasted Carrots with Cardamom Butter');
@@ -33,7 +33,7 @@ describe('Recipe', function(){
     });
     describe('.create', function(){
       it('should create an recipe', function(done){
-        var o = {name:'Roasted Carrots with Cardamom Butter', photo:'url', ingredients:['a', 'b', 'c', 'd'], directions:['e','f','g','h'] };
+        var o = {name:'Roasted Carrots with Cardamom Butter', photo:'url', ingredients:'a,b,c,d', directions:'e,f,g,h' };
         Recipe.create(o, function(err, recipe){
           expect(recipe._id).to.be.instanceof(Mongo.ObjectID);
           done();

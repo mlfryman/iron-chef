@@ -1,12 +1,78 @@
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
 *{
   font-family: 'Open Sans', sans-serif;
   font-size: 13px;
 }
-
-body{
-  background-image: url(/img/node.png);
-  background-size: cover;
+h1 {
+  font-size: 30px;
+  text-align: center;
 }
-
+h2 {
+  font-size: 20px;
+  text-align: left;
+}
+body {
+  background-color: #94B8B8;
+}
+#wrapper {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+}
+#recipes {
+  position: relative;
+  text-align: center;
+}
+.form{
+  position: relative;
+  top: 5px;
+  bottom: 5px;
+  background-color: white;
+  width: 400px;
+  height: auto;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 20px;
+  vertical-align:top;
+  margin-left:60px;
+}
+td {
+  width: 75px;
+}
+.recipe {
+  display: inline-block;
+  position: relative;
+  top: 5px;
+  bottom: 5px;
+  background-color: white;
+  width: 400px;
+  height: auto;
+  margin: 5px;
+  padding: 5px;
+  border: 2px solid black;
+  border-radius: 20px;
+  vertical-align:top;
+}
+.recipe .name {
+  font-weight: bold;
+  font-size: 20px;
+}
+.recipe ul, .recipe ol {
+  text-align: left;
+}
+.recipe li {
+  margin: 3px 0;
+}
+.recipe .photo{
+  height: 300px;
+  background-size: cover;
+  border-bottom: 1px solid #111111;
+  margin-bottom: 10px;
+}
+footer{
+  padding: 10px;
+  text-align:center;
+  font-size:small;
+}

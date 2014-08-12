@@ -5,8 +5,8 @@
 function Recipe(o){
   this.name = o.name;
   this.photo = o.photo;
-  this.ingredients = o.ingredients;
-  this.directions = o.directions;
+  this.ingredients = o.ingredients.split(',').map(function(i){return i.trim();});
+  this.directions = o.directions.split(',').map(function(i){return i.trim();});
 
 }
 

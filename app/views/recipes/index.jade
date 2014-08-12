@@ -1,0 +1,34 @@
+extends ../shared/template
+block content
+
+  #controls
+    #visibility
+      button#hide Hide Form
+      button#show Show Form
+    .form
+      form(method='post', action='/recipes')
+        table
+          thead
+            tr
+              th New Recipe
+          tbody
+            tr
+              td: label Name: 
+              td: input(name='name', type='text', placeholder='Chicki-Chicki-Parm-Parm', autofocus=true)
+           tr
+              td: label Photo: 
+              td: input(name='photo', type='text', placeholder='http://link.to.recipe.image.png')
+            tr
+              td: label Ingredients: 
+              td: input(name='ingredients', type='text')
+            tr
+              td: label Directions: 
+              td: textarea(name='directions')
+            tr
+              td(colspan='5'): button Add Recipe
+
+  #recipes
+    each recipe in recipes
+      include recipe
+
+  footer &copy; 2014, Melanie Fryman
