@@ -3,29 +3,24 @@ block content
 
   #controls
     #visibility
-      button#hide Hide Form
-      button#show Show Form
-    .form
-      form(method='post', action='/recipes')
-        table
-          thead
-            tr
-              th New Recipe
-          tbody
-            tr
-              td: label Name: 
-              td: input(name='name', type='text', placeholder='Chicki-Chicki-Parm-Parm', autofocus=true)
-           tr
-              td: label Photo: 
-              td: input(name='photo', type='text', placeholder='http://link.to.recipe.image.png')
-            tr
-              td: label Ingredients: 
-              td: input(name='ingredients', type='text')
-            tr
-              td: label Directions: 
-              td: textarea(name='directions')
-            tr
-              td(colspan='5'): button Add Recipe
+      button.pink#hide Hide Form
+      button.pink#show Show Form
+
+    form(method='post', action='/recipes')
+      select(name='Category')
+        option Rabbit Food
+        option Gluttony Day
+        option Indigenous Exploitation
+      input(name='name', type='text', placeholder='Chicken', autofocus=true)
+      input(name='photo', type='text', placeholder='Image URL')
+      input(name='ingredients', type='text', placeholder='chicken, water, eggs')
+      textarea(name='directions')
+      button.blue Add Recipe
+
+  ul#categories
+    li: a(href='#') Rabbit Food
+    li: a(href='#') Gluttony Day
+    li: a(href='#') Indigenous Exploitation
 
   #recipes
     each recipe in recipes
