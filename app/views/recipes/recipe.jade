@@ -3,10 +3,11 @@
     button.red.delete x
   .name= recipe.name
   .category= recipe.category
-  h2 Ingredients:
-  ul
-    each ingredient in recipe.ingredients
-      li= ingredient
+  .ingredients= rec
+    h2 Ingredients:
+    ul#ingredients
+      each ingredient in recipe.ingredients
+        li: a(href='#')= ingredient
   h2 Directions:
   ol
     each direction in recipe.directions
